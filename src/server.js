@@ -3,6 +3,7 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import authRouter from "./routes/authRoutes.js";
 import todoRouter from "./routes/todoRoutes.js";
+import authMiddleware from "./middlewares/authMiddleware.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -30,9 +31,9 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRouter);
 
-app.use("/todos", todoRouter);
+app.use("/todos", authMiddleware, todoRouter);
 
 app.listen(PORT, () => {
   console.log(`Server has started on port: ${PORT}`);
 });
-// model -->> tables  -->> all save query 
+// model -->> tables  -->> all save query
