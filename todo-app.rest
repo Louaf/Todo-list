@@ -20,3 +20,29 @@ Content-Type: application/json
     "password":"msa masa mosa "
 }
 
+### fetch all todos GET /Todos (protected)
+GET http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY2MzUxMjg3LCJleHAiOjE3NjY0Mzc2ODd9.jAOkTX7sYpBn2CqvL3FrvKWM93W31yTXemXyZHhi2E8
+
+### creates a new todo Post (protected)
+POST  http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY2MzUxNDk3LCJleHAiOjE3NjY0Mzc4OTd9.iVdtXFyOO4fAsLfd2seSUzw6JJBA_AChFkUs7BbsZDU
+Content-Type: application/json
+
+{
+    "task":"finish coding the projects "
+}
+
+### Update a todo  PUT / todo /:ID (protected)
+PUT http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY2MzUxNDk3LCJleHAiOjE3NjY0Mzc4OTd9.iVdtXFyOO4fAsLfd2seSUzw6JJBA_AChFkUs7BbsZDU
+Content-Type: application/json
+
+{
+    "completed":1
+}
+
+### Delete a todo  DELETE / todo /:ID (protected)
+DELETE  http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY2MzUxNDk3LCJleHAiOjE3NjY0Mzc4OTd9.iVdtXFyOO4fAsLfd2seSUzw6JJBA_AChFkUs7BbsZDU
+
